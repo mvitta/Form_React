@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: consolas;
+}
+
+:root {
+  --color-white: rgb(255, 255, 255);
+  --color-red: rgb(165, 42, 42);
+}
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid black;
+  margin: 0 auto;
+  width: 1024px;
+  padding-top: 6rem;
+}
+
+table {
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+table thead {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+table tbody tr td {
+  width: auto;
+}
+
+h1 {
+  background-color: var(--color-red);
+  margin-bottom: 1rem;
+  color: var(--color-white);
+}
+
+td {
+  padding: 0.5rem;
+}
+
+.section-search {
+  padding: 1rem;
+}
+
+.section-search input {
+  margin: 0 1rem;
+}
+
+.section-pagination {
+  padding: 1rem;
+}
+
+span {
+  padding: 0 1rem;
+}
