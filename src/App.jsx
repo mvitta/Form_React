@@ -30,8 +30,14 @@ function App() {
 
   function handleSubmit(e) {
     const title = document.getElementById('search').value
-    setMovietitle(title)
-    console.log(title)
+    // si esta vacio es falso
+    // https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+    if (title) {
+      setMovietitle(title)
+      console.log(title)
+    } else {
+      alert('debes llenar el campo')
+    }
     e.preventDefault()
   }
 
