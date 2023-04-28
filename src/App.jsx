@@ -32,6 +32,7 @@ function App() {
     const title = document.getElementById('search').value
     // si esta vacio es falso
     // https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+    // no hay time para un manejador de error jeje
     if (title) {
       setMovietitle(title)
       console.log(title)
