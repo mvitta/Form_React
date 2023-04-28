@@ -4,6 +4,9 @@ import '../src/App.css'
 import { useState } from 'react'
 import { Loading } from './components/Loading.jsx'
 import { useMovie } from './hooks/useMovie'
+import { Form } from './components/Form'
+import { Footer } from './components/Footer'
+import { Pagination } from './components/Pagination'
 
 function App() {
   const [page, setPage] = useState(1)
@@ -41,37 +44,13 @@ function App() {
         </section>
         <div className='section-search'>
           {/* formulario */}
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor='search'>
-                Search Movies
-                <input type='text' name='search' id='search' placeholder='write a movie' />
-              </label>
-              <button type='submit'>Search</button>
-            </div>
-          </form>
+          <Form handle={handleSubmit} />
         </div>
         {/* Carga de tabla con nombre de peliculas */}
         {loading ? <Table movies={movies.Search} /> : <Loading />}
         {/* Paginacion */}
-        <section className='section-pagination'>
-          <button type='button' id='previous' onClick={handlePagination}>
-            Previous
-          </button>
-          <span>{page}</span>
-          <button type='button' id='next' onClick={handlePagination}>
-            Next
-          </button>
-        </section>
-
-        <footer>
-          <div>
-            <span>API: </span>
-            <a href='https://www.omdbapi.com/' target='_blank' rel='noopener noreferrer'>
-              https://www.omdbapi.com/
-            </a>
-          </div>
-        </footer>
+        <Pagination handle={handlePagination} page={page} />
+        <Footer />
       </div>
     </>
   )
