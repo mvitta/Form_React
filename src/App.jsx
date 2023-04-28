@@ -1,35 +1,15 @@
 import './App.css'
 import { Table } from './components/Table'
 import '../src/App.css'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Loading } from './components/Loading.jsx'
+import { useMovie } from './hooks/useMovie'
 
 function App() {
-  const [movies, setMovies] = useState([])
-  const [loading, setLoading] = useState(false)
   const [page, setPage] = useState(1)
   const [movieTitle, setMovietitle] = useState('Avengers')
 
-  const BASE_URL = 'http://www.omdbapi.com/'
-
-  useEffect(() => {
-    async function fetchMovies() {
-      try {
-        const response = await fetch(
-          `${BASE_URL}?apikey=${import.meta.env.VITE_API_KEY}&s=${movieTitle}&page=${page}&type=movie`
-        )
-        const data = await response.json()
-        setMovies(data)
-        setLoading(true)
-
-        console.log(data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    fetchMovies()
-  }, [page, movieTitle])
+  const { movies, loading } = useMovie({ page, movieTitle })
 
   function handlePagination(e) {
     const id = e.target.id
