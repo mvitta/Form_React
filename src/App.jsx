@@ -4,7 +4,7 @@ import '../src/App.css'
 import { useState, useEffect } from 'react'
 
 function App() {
-  const [movies, setMovies] = useState({})
+  const [movies, setMovies] = useState([])
   const [loading, setLoading] = useState(false)
   const [page, setPage] = useState(1)
   const [movieTitle, setMovietitle] = useState('Avengers')
@@ -29,15 +29,6 @@ function App() {
 
     fetchMovies()
   }, [page, movieTitle])
-
-  function handleFilter() {
-    const valueInput = document.getElementById('filter').value
-    const { Search } = movies
-    const filter = Search.filter((movie) => valueInput === movie.Title)
-
-    console.log(filter)
-    setMovies({ Search: filter })
-  }
 
   function handlePagination(e) {
     const id = e.target.id
@@ -71,16 +62,9 @@ function App() {
           {/* formulario */}
           <form onSubmit={handleSubmit}>
             <div>
-              <label htmlFor='filter'>
-                Filter
-                <input type='text' name='filter' id='filter' />
-              </label>
-              <button onClick={handleFilter}>Filter Current table</button>
-            </div>
-            <div>
               <label htmlFor='search'>
-                New Search
-                <input type='text' name='search' id='search' />
+                Search Movies
+                <input type='text' name='search' id='search' placeholder='write a movie' />
               </label>
               <button type='submit'>Search</button>
             </div>
@@ -98,6 +82,15 @@ function App() {
             Next
           </button>
         </section>
+
+        <footer>
+          <div>
+            <span>API: </span>
+            <a href='https://www.omdbapi.com/' target='_blank' rel='noopener noreferrer'>
+              https://www.omdbapi.com/
+            </a>
+          </div>
+        </footer>
       </div>
     </>
   )

@@ -4,6 +4,7 @@ export function Table({ movies }) {
       <table>
         <thead>
           <tr>
+            <td>No</td>
             <td>imdbID</td>
             <td>Title</td>
             <td>Year</td>
@@ -11,10 +12,11 @@ export function Table({ movies }) {
           </tr>
         </thead>
         <tbody>
-          {movies.map((movie) => {
+          {movies.map((movie, index) => {
             const { imdbID, Title, Year, Type } = movie
             return (
               <tr key={crypto.randomUUID()}>
+                <td>{index + 1}</td>
                 <td>{imdbID}</td>
                 <td>{Title}</td>
                 <td>{Year}</td>

@@ -5,6 +5,10 @@
   font-family: consolas;
 }
 
+body {
+  background: rgb(191, 191, 191);
+}
+
 :root {
   --color-white: rgb(255, 255, 255);
   --color-red: rgb(165, 42, 42);
@@ -16,9 +20,12 @@
   flex-direction: column;
   text-align: center;
   border: 1px solid black;
+  border-radius: 10px;
   margin: 0 auto;
   width: 1024px;
   padding-top: 6rem;
+  margin: 2rem;
+  background-color: var(--color-white);
 }
 
 table {
@@ -61,4 +68,8 @@ td {
 
 span {
   padding: 0 1rem;
+}
+
+footer {
+  margin-bottom: 1rem;
 }

@@ -1,6 +1,7 @@
 {
-  "name": "formularios-react",
+  "name": "test-front",
   "private": true,
+  "description": "PRUEBA PRÁCTICA PARA DESARROLLADOR WEB",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
