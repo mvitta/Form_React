@@ -2,6 +2,7 @@ import './App.css'
 import { Table } from './components/Table'
 import '../src/App.css'
 import { useState, useEffect } from 'react'
+import { Loading } from './components/Loading.jsx'
 
 function App() {
   const [movies, setMovies] = useState([])
@@ -71,7 +72,7 @@ function App() {
           </form>
         </div>
         {/* Carga de tabla con nombre de peliculas */}
-        {loading ? <Table movies={movies.Search} /> : <div>Error </div>}
+        {loading ? <Table movies={movies.Search} /> : <Loading />}
         {/* Paginacion */}
         <section className='section-pagination'>
           <button type='button' id='previous' onClick={handlePagination}>

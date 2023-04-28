@@ -73,3 +73,8 @@ span {
 footer {
   margin-bottom: 1rem;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+}
