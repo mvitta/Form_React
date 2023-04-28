@@ -13,3 +13,5 @@ Math.ceil(movies.totalResults / 10) -> redondea al entero mas cercano hacia arri
 Es cierto que 4 condiciones es demasiado, seguramente con una sola es suficiente, no quise probar :D.
 Por último el Loading muestra un incono mientras carga la pagina
 GRACIAS :D.
+
+aproveche un tiempo que tenia para mejorarlo un poco, los arreglos estan dentro de las 24 hora :D
