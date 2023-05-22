@@ -9,15 +9,15 @@ export function useMovie({ page, movieTitle }) {
     async function fetchMovies() {
       try {
         const response = await fetch(
-          `${BASE_URL}?apikey=${import.meta.env.VITE_API_KEY}&s=${movieTitle}&page=${page}&type=movie`
+          `${BASE_URL}?apikey=${
+            import.meta.env.VITE_API_KEY
+          }&s=${movieTitle}&page=${page}&type=movie`
         )
         const data = await response.json()
         setMovies(data)
         setLoading(true)
-
-        console.log(data)
       } catch (error) {
-        console.log(error)
+        console.log(new Error(error))
       }
     }
 

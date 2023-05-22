@@ -1,6 +1,7 @@
 export function Table({ movies }) {
   return (
     <>
+      <h2>Total Results {movies.totalResults}</h2>
       <table>
         <thead>
           <tr>
@@ -12,7 +13,7 @@ export function Table({ movies }) {
           </tr>
         </thead>
         <tbody>
-          {movies.map((movie, index) => {
+          {movies.Search.map((movie, index) => {
             const { imdbID, Title, Year, Type } = movie
             return (
               <tr key={crypto.randomUUID()}>
